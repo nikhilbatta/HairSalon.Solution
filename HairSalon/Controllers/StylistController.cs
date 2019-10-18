@@ -17,5 +17,16 @@ namespace HairSalon.Controllers
             // will take in an id from whatever stylist was clicked and then filter the collection based on the id to display that stylists clients.
             return View();
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            // will be able to create a new stylist. 
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(// will take in the object recieved from the other create)
+        {
+            // will mostlikely redirect to some other action or url.
+        }
     }
 }
