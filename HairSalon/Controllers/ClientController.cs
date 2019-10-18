@@ -1,9 +1,20 @@
+using HairSalon.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+
 namespace HairSalon.Controllers
 {
     public class ClientController: Controller
     {
+         private readonly HairSalonContext _db;
+        public ClientController(HairSalonContext db)
+        {
+            _db = db;
+        }
         public ActionResult Index()
         {
+
             // should list out every client in the system, then should be able to click and find out their details. 
             // carries an id to pass to details.
             return View();
@@ -20,9 +31,9 @@ namespace HairSalon.Controllers
             // will show a form to create the new client
             return View();
         }
-        public ActionResult Create(// will take in an object from the previous create)
-        {
-            // most likely will redirect them back to index
-        }
+        // public ActionResult Create()
+        // {
+        //     // most likely will redirect them back to index
+        // }
     }
 }
