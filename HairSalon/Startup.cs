@@ -24,6 +24,8 @@ namespace Restaurant
         {
             services.AddMvc();
             services.AddEntityFrameworkMySql()
+            // change cuisine context to hairsalon context or whatever ic alll that file
+            // if i want to make a database without actually making it i have to put in that factory file.
             .AddDbContext<CuisineContext>(options => options
             .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
