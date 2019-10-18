@@ -13,8 +13,8 @@ namespace HairSalon
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath);
-                // .AddJsonFile("appsettings.json");
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
 
@@ -23,11 +23,11 @@ namespace HairSalon
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddEntityFrameworkMySql();
+            services.AddEntityFrameworkMySql()
             // change cuisine context to hairsalon context or whatever ic alll that file
             // if i want to make a database without actually making it i have to put in that factory file.
-            // .AddDbContext<HairSalonContext>(options => options
-            // .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+            .AddDbContext<HairSalonContext>(options => options
+            .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
         }
         public void Configure(IApplicationBuilder app)
