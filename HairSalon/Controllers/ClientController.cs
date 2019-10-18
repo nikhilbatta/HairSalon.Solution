@@ -23,7 +23,6 @@ namespace HairSalon.Controllers
         public ActionResult Create(// will take in an object from the previous create)
         {
             // most likely will redirect them back to index
-            
         }
     }
 }
