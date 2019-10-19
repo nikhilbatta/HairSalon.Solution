@@ -39,7 +39,9 @@ namespace HairSalon.Controllers
         [HttpPost]
         public ActionResult Create(Stylist newStylist)
         {
-            return View(newStylist);
+            _db.Stylists.Add(newStylist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
             // will mostlikely redirect to some other action or url.
         }
     }

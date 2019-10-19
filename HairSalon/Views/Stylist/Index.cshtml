@@ -7,7 +7,7 @@
 }
 @foreach(Stylist stylistV in Model)
 {
-    <p>@stylistV.Name</p>
-    <p>@stylistV.Price</p>
+    @Html.ActionLink("Click me to get details for @stylistV.Name", "Details", "Stylist", new {id = stylistV.StylistId})
+    Price : $ <p>@stylistV.Price</p>
 }
 
