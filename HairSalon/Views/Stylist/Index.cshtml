@@ -1,13 +1,13 @@
-@*
+
 @using HairSalon.Models;
 
 @if(Model.Count == 0)
 {
-    <p>Add a stylist</p>
+    @Html.ActionLink("Add a stylist", "Create", "Stylist")
 }
 @foreach(Stylist stylistV in Model)
 {
     <p>@stylistV.Name</p>
     <p>@stylistV.Price</p>
 }
-*@
+

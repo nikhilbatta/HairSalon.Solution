@@ -1,0 +1,10 @@
+
+@model HairSalon.Models.Stylist
+
+@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Specialties)
+    @Html.TextBoxFor(model => model.Price)
+<input type = "submit" value = "Create new stylist"/>
+}
