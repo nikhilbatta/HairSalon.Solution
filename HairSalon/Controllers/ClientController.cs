@@ -2,6 +2,8 @@ using HairSalon.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HairSalon.Controllers
 {
