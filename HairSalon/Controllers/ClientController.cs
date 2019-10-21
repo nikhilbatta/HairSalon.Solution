@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
 namespace HairSalon.Controllers
 {
@@ -24,11 +25,13 @@ namespace HairSalon.Controllers
         public ActionResult Details(int id)
         {
             
-             
+            Client foundClient = _db.Clients.FirstOrDefault(c => c.ClientID == id);
+            Console.WriteLine(foundClient.ClientName);
             // iteration  through colllection to find out if that id matches the id passed in and then returns that specific clients details.
             // action links on view page to redirect them to other parts of the website.
-            return View();
+            return View(foundClient);
         }
+        [HttpGet]
         public ActionResult Create()
         {
             ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
@@ -41,7 +44,7 @@ namespace HairSalon.Controllers
         {
             _db.Clients.Add(newClient);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Stylist");
             // most likely will redirect them back to index
         }
     }

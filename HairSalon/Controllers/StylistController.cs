@@ -16,7 +16,7 @@ namespace HairSalon.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            List<Stylist> model = _db.Stylists.Include(stylist => stylist.clientCollect).ToList();
+            List<Stylist> model = _db.Stylists.ToList();
             // controller index for this stylistcontrollerview will show me a list of all stylists.
             // and the stylist properties, like what is the stylist price.
             // make the stylist clickable. 
@@ -25,7 +25,7 @@ namespace HairSalon.Controllers
         }
         public ActionResult Details(int id)
         {
-            Stylist foundStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
+            Stylist foundStylist = _db.Stylists.Include(client => client.clientCollect).FirstOrDefault(Stylist => Stylist.StylistId == id);
             // will take in an id from whatever stylist was clicked and then filter the collection based on the id to display that stylists clients.
             // each client that gets displayed will be clickable to see that specific clients details.
             return View(foundStylist);

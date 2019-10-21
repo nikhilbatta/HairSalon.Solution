@@ -1,0 +1,16 @@
+@using HairSalon.Models;
+
+
+<div class="stylistDetails">
+<p>@Model.Name</p>
+<p>@Model.Specialties</p>
+<p>@Model.Price</p>
+
+@foreach(var clientV in @Model.clientCollect)
+{
+    
+    <p>@clientV.ClientName</p>
+    @Html.ActionLink("Details", "Details", "Client", new {id = clientV.ClientID})
+}
+</div>
+@Html.ActionLink("Add client for this specific stylist", "Create", "Client")
