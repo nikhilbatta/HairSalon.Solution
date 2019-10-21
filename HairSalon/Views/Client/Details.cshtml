@@ -1,8 +1,14 @@
+@{
+  Layout = "_Layout";
+}
 @model HairSalon.Models.Client
 @using HairSalon.Models
 
-<ul>
-<li> @Model.ClientName </li>
-<li> @Model.PhoneNumber </li>
-<li> @Model.StyleType </li>
+<h1> Info on @Model.ClientName <h1>
+<div class="card">
+<ul class = "clientinfo">
+<li><b> Client Name : @Model.ClientName</b> </li>
+<li><b>Client Number: @Model.PhoneNumber</b></li>
+<li><b>Client Style: @Model.StyleType </b> </li>
 </ul>
+</div>

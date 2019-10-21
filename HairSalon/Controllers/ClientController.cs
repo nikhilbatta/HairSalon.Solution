@@ -34,6 +34,11 @@ namespace HairSalon.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            Console.WriteLine(_db.Stylists.Count);
+            if(_db.Stylists.Count == 0)
+            {
+                return RedirectToAction("Create", "Stylist");
+            }
             ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             // has to pass in something to make the relationship between client and stylist.
             // i think i will have to pass in a viewbag or view data to also pass in the stylist "ids" or "names"

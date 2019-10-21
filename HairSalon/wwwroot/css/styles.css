@@ -1,0 +1,60 @@
+ul#navbarlayout {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  li p#nav {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+  }
+  body{
+      background-color: moccasin;
+  }
+  .jumbotron{
+      background-color: moccasin;
+  }
+  div.links {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    text-align: center;
+  }
+ 
+  div.clients {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 0;
+    display: inline-block;
+  }
+  div.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  h1 {
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  h4#stylistindex{
+      text-align: center;
+  }
+  div.form-group
+{
+    display: block;
+    text-align: center;
+}
+div.stylistDetails{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    text-align: center;
+}
+ul.clientinfo{
+    list-style-type: none;
+}

@@ -1,16 +1,27 @@
+@{
+  Layout = "_Layout";
+}
 @using HairSalon.Models;
-
-
+ 
 <div class="stylistDetails">
-<p>@Model.Name</p>
-<p>@Model.Specialties</p>
-<p>@Model.Price</p>
-
+<h3> Stylist Name: @Model.Name</h3>
+<h3> Stylist Specialties: @Model.Specialties</h3>
+<h3> Stylist Price: @Model.Price</h3>
+</div>
+<h1>All Clients For This Stylist</h1>
 @foreach(var clientV in @Model.clientCollect)
 {
-    
-    <p>@clientV.ClientName</p>
+    <div class="clients">
+      <p> Name: @clientV.ClientName</p>
     @Html.ActionLink("Details", "Details", "Client", new {id = clientV.ClientID})
+    </div>
 }
+
+<br>
+<br>
+
+<div class="links">
+<b>@Html.ActionLink("Add New Client", "Create", "Client")</b>
+<br>
+<b>@Html.ActionLink("Go back to home page", "Index", "Stylist")</b>
 </div>
-@Html.ActionLink("Add client for this specific stylist", "Create", "Client")

@@ -1,13 +1,23 @@
-
+@{
+  Layout = "_Layout";
+}
 @model HairSalon.Models.Client
+
 <h1>Add a new client!</h1>
+<br>
 @using (Html.BeginForm())
 {
     <div class = "form-group">
+     @Html.LabelFor(model => model.ClientName)
     @Html.TextBoxFor(model => model.ClientName)
+    @Html.LabelFor(model => model.PhoneNumber)
     @Html.TextBoxFor(model => model.PhoneNumber)
+    @Html.LabelFor(model => model.StyleType)
     @Html.TextBoxFor(model => model.StyleType)
-    @Html.DropDownList("StylistId")
+    <b>Stylist Name: </b> @Html.DropDownList("StylistId")
+    <br>
+    <br>
+    <input id="clientbutton" type = "submit" value = "Create new client"/>
     </div>
-<input type = "submit" value = "Create new stylist"/>
+
 }
