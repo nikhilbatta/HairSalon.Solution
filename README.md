@@ -1,6 +1,6 @@
 # _HairSalon_
 
-#### _This web application will allow a user to create, view, or delete a stylist. Also create, view, or delete, or edit a client from a stylist. October 18,2019_
+#### _This web application will allow a user to create, view, or delete a stylist. Also create and view a stylist. October 18,2019_
 
 #### By _Nikhil Batta_
 
