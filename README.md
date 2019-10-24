@@ -10,9 +10,9 @@ _Specs_
 
 * _User can view the splash page_
 * _User can click on links to navigate through pages_
-* _User can add a new stylist
+* _User can add a new stylist_
 * _User can add a new client to a stylist_
-* _If no stylist exists then user can't add client
+* _If no stylist exists then user can't add client_
 * _User can click on specific links for details of either client or stylist_
 
 
