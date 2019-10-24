@@ -1,0 +1,7 @@
+@using HairSalon.Models.Clients;
+
+@foreach(Client client in @Model)
+{
+    <p> @client.Name </p>
+    <p> @client.OneStylist.Name </p>
+}

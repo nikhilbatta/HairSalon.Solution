@@ -10,5 +10,6 @@
 <li><b> Client Name : @Model.ClientName</b> </li>
 <li><b>Client Number: @Model.PhoneNumber</b></li>
 <li><b>Client Style: @Model.StyleType </b> </li>
+@Html.ActionLink("Edit", "Edit", "Client", new {id = @Model.ClientID})
 </ul>
 </div>

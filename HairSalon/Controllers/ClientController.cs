@@ -34,11 +34,8 @@ namespace HairSalon.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            Console.WriteLine(_db.Stylists.Count);
-            if(_db.Stylists.Count == 0)
-            {
-                return RedirectToAction("Create", "Stylist");
-            }
+            
+            
             ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             // has to pass in something to make the relationship between client and stylist.
             // i think i will have to pass in a viewbag or view data to also pass in the stylist "ids" or "names"
@@ -51,6 +48,19 @@ namespace HairSalon.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index", "Stylist");
             // most likely will redirect them back to index
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+            Client foundClient = _db.Clients.FirstOrDefault(c => c.ClientID == id);
+            return View(foundClient);
+        }
+        public ActionResult Edit(Client foundClient)
+        {
+            _db.Entry(foundClient).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index", "Stylist");
         }
     }
 }
