@@ -44,9 +44,18 @@ namespace HairSalon.Controllers
         }
         public ActionResult Create(Client newClient)
         {
-            _db.Clients.Add(newClient);
-            _db.SaveChanges();
-            return RedirectToAction("Index", "Stylist");
+            Console.WriteLine(newClient.ClientName);
+            if(ModelState.IsValid)
+            {
+                _db.Clients.Add(newClient);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Stylist");
+            }
+            else
+            {
+                return RedirectToAction("Create", "Client");
+            }
+            
             // most likely will redirect them back to index
         }
         [HttpGet]
