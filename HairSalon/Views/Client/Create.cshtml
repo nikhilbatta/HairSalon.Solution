@@ -8,10 +8,9 @@
 <br>
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true)
-    
+  @Html.LabelFor(model => model.ClientName)
     <div class = "form-group">
-      @Html.LabelFor(model => model.ClientName)
+      
       @Html.EditorFor(model => model.ClientName)
     @Html.ValidationMessageFor(model => model.ClientName)
     @Html.LabelFor(model => model.PhoneNumber)
